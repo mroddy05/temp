@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.ListView?>
+
+<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.SecondaryController">
+   <children>
+      <Label text="Build Your Pizza" />
+      
+      <Label fx:id="chooseItemLabel" style="-fx-font-size: 14px; -fx-font-weight: bold;" />
+      <StackPane>
+         <ComboBox fx:id="crustChoice" onAction="#addCrust" />
+         <ComboBox fx:id="sauceChoice" visible="false" onAction="#addSauce" />
+         <ComboBox fx:id="toppingChoice" visible="false" onAction="#addTopping" />
+      </StackPane>
+      <Label text="Selected Items:" />
+      <ListView fx:id="selectedItems" prefHeight="100" />
+            
+      <Label fx:id="totalPriceLabel" style="-fx-font-size: 14px; -fx-font-weight: bold;" />
+      <HBox>
+            <Button fx:id="sauceButton" text="Add Sauce" onAction="#addSauce" />
+            <Button fx:id="toppingButton" text="Add Topping" onAction="#addTopping" />
+      </HBox>
+      <HBox>
+            <Button fx:id="receiptButton" text="Final Receipt" onAction="#switchToReceipt" />
+      </HBox>
+   </children>
+   <padding>
+      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+   </padding>
+</VBox>
